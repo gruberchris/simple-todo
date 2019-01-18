@@ -1,6 +1,12 @@
 # Simple ToDo
 This is a demonstration web application generated from **create-react-app** and implemented using **React**.
 
+## Docker
+
+`docker build . -t simple-todo`
+
+`docker run -d -p 3000:80 simple-todo`
+
 ### Available Scripts From the [Create React App](https://github.com/facebook/create-react-app) Generator.
 
 In the project directory, you can run:
