@@ -2,7 +2,7 @@
   "name": "simple-todo",
   "version": "0.1.0",
   "private": true,
-  "repository": "",
+  "repository": "https://github.com/gruberchris/simple-todo",
   "author": "Chris Gruber",
   "license": "MIT",
   "dependencies": {
