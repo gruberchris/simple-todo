@@ -1,28 +1,53 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
+import NavBar from './components/NavBar';
+import ToDoForm from './components/ToDoForm';
+import ToDoList from './components/ToDoList';
+
+export default class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      todos: [],
+      todoIdCounter: 0
+    };
+
+    this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
+  }
+
+  addTodo(description) {
+    this.setState((prevState) => {
+      const updatedTodoIdCounter = prevState.todoIdCounter + 1;
+      const todo = { id: updatedTodoIdCounter, description };
+
+      return {
+        todos: [...prevState.todos, todo],
+        todoIdCounter: updatedTodoIdCounter
+      };
+    });
+  }
+
+  removeTodo(id) {
+    const { todos } = this.state;
+
+    // Filter out all the todo items except the one todo we want to remove
+    const filteredTodos = todos.filter(todo => todo.id !== id);
+
+    // Update the state with the new todo list minus the one todo we removed
+    this.setState({ todos: [...filteredTodos] });
+  }
+
   render() {
+    const { todos } = this.state;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <NavBar />
+        <ToDoForm addTodo={this.addTodo} />
+        <ToDoList todos={todos} removeTodo={this.removeTodo} />
+      </React.Fragment>
     );
   }
 }
-
-export default App;
