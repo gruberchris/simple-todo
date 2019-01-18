@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ListGroup } from 'reactstrap';
 
 import ToDo from '../ToDo';
 
@@ -9,7 +10,7 @@ const ToDoList = ({ todos, removeTodo }) => {
   ));
 
   return (
-    <ul>{todoNode}</ul>
+    <ListGroup>{todoNode}</ListGroup>
   );
 };
 

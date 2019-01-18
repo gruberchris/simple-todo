@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
 import NavBar from './components/NavBar';
 import ToDoForm from './components/ToDoForm';
@@ -43,11 +44,18 @@ export default class App extends React.Component {
     const { todos } = this.state;
 
     return (
-      <React.Fragment>
-        <NavBar />
-        <ToDoForm addTodo={this.addTodo} />
-        <ToDoList todos={todos} removeTodo={this.removeTodo} />
-      </React.Fragment>
+      <Container>
+        <Row>
+          <Col md="2" />
+          <Col md="8">
+            <NavBar />
+            <ToDoForm addTodo={this.addTodo} />
+            <br />
+            <ToDoList todos={todos} removeTodo={this.removeTodo} />
+          </Col>
+          <Col md="2" />
+        </Row>
+      </Container>
     );
   }
 }
