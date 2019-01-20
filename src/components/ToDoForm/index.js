@@ -31,7 +31,7 @@ const ToDoForm = (props) => {
             }
           }}
         >
-          +
+          Add
         </Button>
       </InputGroup>
     </div>

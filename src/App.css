@@ -1,5 +1,13 @@
+.todo-input {
+  margin: 15px 0 10px;
+}
+
 .todo-input button {
   margin-left: 10px;
+}
+
+.todo-input input {
+  background-color: whitesmoke;
 }
 
 .todo-list {
@@ -12,7 +20,7 @@
   margin-bottom: 15px;
   border-radius: 5px;
   list-style: none;
-  background-color: aliceblue;
+  background-color: #e9ecef;
   border: solid 2px;
   box-sizing: border-box;
 }
