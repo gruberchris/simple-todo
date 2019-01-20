@@ -10,7 +10,7 @@ const ToDoList = ({ todos, removeTodo }) => {
   ));
 
   return (
-    <ListGroup>{todoNode}</ListGroup>
+    <ListGroup className="todo-list">{todoNode}</ListGroup>
   );
 };
 

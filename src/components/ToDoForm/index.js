@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InputGroup, Button, FormControl } from 'react-bootstrap';
+import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ToDoForm = (props) => {
   let input;
 
   return (
     <div>
-      <InputGroup>
+      <InputGroup className="todo-input">
+        <InputGroup.Prepend>
+          <InputGroup.Text>
+            <FontAwesomeIcon icon={faCommentAlt} />
+          </InputGroup.Text>
+        </InputGroup.Prepend>
         <FormControl
           placeholder="What do you want to do?"
           aria-label="What do you want to do?"
@@ -16,17 +23,16 @@ const ToDoForm = (props) => {
             input = node.target;
           }}
         />
-        <InputGroup.Append>
-          <Button
-            variant="outline-primary"
-            onClick={() => {
+        <Button
+          onClick={() => {
+            if (input) {
               props.addTodo(input.value);
               input.value = '';
-            }}
-          >
-            +
-          </Button>
-        </InputGroup.Append>
+            }
+          }}
+        >
+          +
+        </Button>
       </InputGroup>
     </div>
   );

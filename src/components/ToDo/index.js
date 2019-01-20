@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Button } from 'react-bootstrap';
 
 const ToDo = ({ removeTodo, todo }) => {
   const { id, description } = todo;
 
   return (
-    <ListGroup.Item onClick={() => { removeTodo(id); }}>{description}</ListGroup.Item>
+    <ListGroup.Item className="todo-list-item hoverable">
+      <span className="todo-list-item-text">{description}</span>
+      <Button className="float-right" variant="danger" size="sm" onClick={() => { removeTodo(id); }}>X</Button>
+    </ListGroup.Item>
   );
 };
 

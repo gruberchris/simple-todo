@@ -19,15 +19,17 @@ export default class App extends React.Component {
   }
 
   addTodo(description) {
-    this.setState((prevState) => {
-      const updatedTodoIdCounter = prevState.todoIdCounter + 1;
-      const todo = { id: updatedTodoIdCounter, description };
+    if (description.length > 0) {
+      this.setState((prevState) => {
+        const updatedTodoIdCounter = prevState.todoIdCounter + 1;
+        const todo = { id: updatedTodoIdCounter, description };
 
-      return {
-        todos: [...prevState.todos, todo],
-        todoIdCounter: updatedTodoIdCounter
-      };
-    });
+        return {
+          todos: [...prevState.todos, todo],
+          todoIdCounter: updatedTodoIdCounter
+        };
+      });
+    }
   }
 
   removeTodo(id) {

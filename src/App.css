@@ -1,0 +1,26 @@
+.todo-input button {
+  margin-left: 10px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  list-style: none;
+  background-color: aliceblue;
+  border: solid 2px;
+  box-sizing: border-box;
+}
+
+.todo-list-item:hover {
+  border: solid 4px;
+}
+
+.todo-list-item-text {
+  vertical-align: middle;
+}
