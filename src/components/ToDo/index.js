@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ListGroupItem } from 'reactstrap';
+import { ListGroup } from 'react-bootstrap';
 
 const ToDo = ({ removeTodo, todo }) => {
   const { id, description } = todo;
 
   return (
-    <ListGroupItem onClick={() => { removeTodo(id); }}>{description}</ListGroupItem>
+    <ListGroup.Item onClick={() => { removeTodo(id); }}>{description}</ListGroup.Item>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListGroup } from 'reactstrap';
+import { ListGroup } from 'react-bootstrap';
 
 import ToDo from '../ToDo';
 

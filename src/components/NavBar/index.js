@@ -1,8 +1,8 @@
 import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar } from 'react-bootstrap';
 
 export default () => (
   <Navbar expand="md">
-    <NavbarBrand href="/">Simple ToDo</NavbarBrand>
+    <Navbar.Brand href="/">Simple ToDo</Navbar.Brand>
   </Navbar>
 );

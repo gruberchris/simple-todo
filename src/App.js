@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import NavBar from './components/NavBar';
 import ToDoForm from './components/ToDoForm';
